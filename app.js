@@ -31,11 +31,5 @@ function sortearAmigo() {
     }else{
         let ulAmigoSeleccionado = document.getElementById('resultado');
         ulAmigoSeleccionado.innerHTML = `<li> ${nombresAmigos[indiceAleatorio()]} </li>`
-
-        /*let ulAmigoSeleccionado = document.getElementById('resultado');
-        let liAmigoSecreto = document.createElement('li')
-        liAmigoSecreto.textContent = nombresAmigos[indiceAleatorio()];
-        ulAmigoSeleccionado.insertAdjacentElement("beforeend", liAmigoSecreto);*/
-
     }
 }
