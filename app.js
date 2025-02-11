@@ -7,8 +7,16 @@ function agregarAmigo(){
     }else{
         nombresAmigos.push(document.getElementById('amigo').value);
         document.getElementById("amigo").value='';
+        actualizarLista()
     }
-    console.log(nombresAmigos)
 }
 
-
+function actualizarLista(){
+    let lista = document.getElementById("listaAmigos");
+    lista.innerHTML = ""
+    for (let index = 0; index < nombresAmigos.length; index++) {
+        let newLi = document.createElement("li");
+        newLi.textContent = `${nombresAmigos[index]}`
+        lista.insertAdjacentElement("beforeend", newLi)
+    }
+}
