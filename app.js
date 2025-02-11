@@ -7,16 +7,35 @@ function agregarAmigo(){
     }else{
         nombresAmigos.push(document.getElementById('amigo').value);
         document.getElementById("amigo").value='';
-        actualizarLista()
+        actualizarLista();
     }
 }
 
 function actualizarLista(){
     let lista = document.getElementById("listaAmigos");
     lista.innerHTML = ""
+    let contenido = ``
     for (let index = 0; index < nombresAmigos.length; index++) {
-        let newLi = document.createElement("li");
-        newLi.textContent = `${nombresAmigos[index]}`
-        lista.insertAdjacentElement("beforeend", newLi)
+        contenido += `<li> ${nombresAmigos[index]} </li>`
+        lista.innerHTML = contenido
+    }
+}
+function indiceAleatorio(){
+    return Math.floor(Math.random()*parseInt(nombresAmigos.length));
+}
+
+function sortearAmigo() {
+    if (!nombresAmigos.length){
+        alert('lista de amigos vacia')
+    
+    }else{
+        let ulAmigoSeleccionado = document.getElementById('resultado');
+        ulAmigoSeleccionado.innerHTML = `<li> ${nombresAmigos[indiceAleatorio()]} </li>`
+
+        /*let ulAmigoSeleccionado = document.getElementById('resultado');
+        let liAmigoSecreto = document.createElement('li')
+        liAmigoSecreto.textContent = nombresAmigos[indiceAleatorio()];
+        ulAmigoSeleccionado.insertAdjacentElement("beforeend", liAmigoSecreto);*/
+
     }
 }
